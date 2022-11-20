@@ -2,13 +2,20 @@ package com.fabriciomrtn.github.Estacionamento.DTO;
 
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+
+@JsonInclude(JsonInclude.Include.NON_DEFAULT)
 public class EstacionamentoDTO {
 	private String id;
 	private String placa;
 	private String estado;
 	private String modelo;
 	private String cor;
+	@JsonFormat(pattern = "dd/MM/yyyy HH:mm")
 	private LocalDateTime dataEntrada;
+	@JsonFormat(pattern = "dd/MM/yyyy HH:mm")
 	private LocalDateTime dataSaida;
 	private double conta;
 	
