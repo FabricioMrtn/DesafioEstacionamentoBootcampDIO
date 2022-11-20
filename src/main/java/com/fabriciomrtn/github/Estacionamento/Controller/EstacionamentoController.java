@@ -17,8 +17,12 @@ import com.fabriciomrtn.github.Estacionamento.DTO.EstacionamentoDTO;
 import com.fabriciomrtn.github.Estacionamento.Model.Estacionamento;
 import com.fabriciomrtn.github.Estacionamento.Service.EstacionamentoService;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
 @RestController
 @RequestMapping("/parking")
+@Api(tags = "Estacionamento Controller")
 public class EstacionamentoController {
 	private final EstacionamentoService estacionamentoService;
 	private final EstacionamentoMapper estacionamentoMapper;
@@ -30,6 +34,7 @@ public class EstacionamentoController {
 	}
 		
 	@GetMapping
+	@ApiOperation("Carrega todos os carros")
 	public ResponseEntity<List<EstacionamentoDTO>> findAll(){
 		List<Estacionamento> listaEstacionamento = estacionamentoService.findAll();	
 		List<EstacionamentoDTO> resultado = estacionamentoMapper.toEstacionamentoDTOList(listaEstacionamento);
@@ -37,6 +42,7 @@ public class EstacionamentoController {
 	}
 	
 	@GetMapping("/{id}")
+	@ApiOperation("Busca o carro pelo Id")
 	public ResponseEntity<EstacionamentoDTO> findById(@PathVariable String id){
 		Estacionamento est = estacionamentoService.findById(id);
 		EstacionamentoDTO resultado = estacionamentoMapper.toEstacionamentoDTO(est);
@@ -44,6 +50,7 @@ public class EstacionamentoController {
 	}
 	
 	@PostMapping
+	@ApiOperation("Cadastra novo carro")
 	public ResponseEntity<EstacionamentoDTO> create(@RequestBody EstacionamentoCreateDTO dto){
 		var estacionamentoCreate = estacionamentoMapper.toEstacionamentoCreateDTO(dto);
 		var estacionamento = estacionamentoService.create(estacionamentoCreate);
