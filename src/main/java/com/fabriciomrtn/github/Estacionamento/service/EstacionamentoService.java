@@ -1,4 +1,4 @@
-package com.fabriciomrtn.github.Estacionamento.Service;
+package com.fabriciomrtn.github.Estacionamento.service;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;
@@ -9,7 +9,8 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
-import com.fabriciomrtn.github.Estacionamento.Model.Estacionamento;
+import com.fabriciomrtn.github.Estacionamento.exceptions.EstacionamentoNaoEncontradoException;
+import com.fabriciomrtn.github.Estacionamento.model.Estacionamento;
 
 @Service
 public class EstacionamentoService {
@@ -33,7 +34,11 @@ public class EstacionamentoService {
 	}
 
 	public Estacionamento findById(String id) {
-		return estacionamentoMap.get(id);
+		Estacionamento estacionamento = estacionamentoMap.get(id);
+		if(estacionamento == null) {
+			throw new EstacionamentoNaoEncontradoException();
+		}
+		return estacionamento;
 	}
 	
 	public Estacionamento create(Estacionamento estacionamentoCreate) {

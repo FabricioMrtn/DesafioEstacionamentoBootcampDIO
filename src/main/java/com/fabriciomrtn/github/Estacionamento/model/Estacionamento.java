@@ -1,4 +1,4 @@
-package com.fabriciomrtn.github.Estacionamento.Model;
+package com.fabriciomrtn.github.Estacionamento.model;
 
 import java.time.LocalDateTime;
 

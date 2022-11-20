@@ -1,4 +1,4 @@
-package com.fabriciomrtn.github.Estacionamento.Controller.Mapper;
+package com.fabriciomrtn.github.Estacionamento.Controller.mapper;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 import com.fabriciomrtn.github.Estacionamento.DTO.EstacionamentoCreateDTO;
 import com.fabriciomrtn.github.Estacionamento.DTO.EstacionamentoDTO;
-import com.fabriciomrtn.github.Estacionamento.Model.Estacionamento;
+import com.fabriciomrtn.github.Estacionamento.model.Estacionamento;
 
 @Component
 public class EstacionamentoMapper {

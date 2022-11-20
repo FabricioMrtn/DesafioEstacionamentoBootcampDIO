@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fabriciomrtn.github.Estacionamento.Controller.Mapper.EstacionamentoMapper;
+import com.fabriciomrtn.github.Estacionamento.Controller.mapper.EstacionamentoMapper;
 import com.fabriciomrtn.github.Estacionamento.DTO.EstacionamentoCreateDTO;
 import com.fabriciomrtn.github.Estacionamento.DTO.EstacionamentoDTO;
-import com.fabriciomrtn.github.Estacionamento.Model.Estacionamento;
-import com.fabriciomrtn.github.Estacionamento.Service.EstacionamentoService;
+import com.fabriciomrtn.github.Estacionamento.model.Estacionamento;
+import com.fabriciomrtn.github.Estacionamento.service.EstacionamentoService;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -45,6 +45,9 @@ public class EstacionamentoController {
 	@ApiOperation("Busca o carro pelo Id")
 	public ResponseEntity<EstacionamentoDTO> findById(@PathVariable String id){
 		Estacionamento est = estacionamentoService.findById(id);
+		if(est == null) {
+			return ResponseEntity.notFound().build();
+		}
 		EstacionamentoDTO resultado = estacionamentoMapper.toEstacionamentoDTO(est);
 		return ResponseEntity.ok(resultado);
 	}
