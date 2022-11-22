@@ -8,6 +8,7 @@ class DesafioEstacionamentoBootcampDioApplicationTests {
 
 	@Test
 	void contextLoads() {
+		
 	}
 
 }
