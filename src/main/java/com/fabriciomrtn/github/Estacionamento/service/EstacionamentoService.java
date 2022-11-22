@@ -24,12 +24,12 @@ public class EstacionamentoService {
 	}
 	
 	static {
-		var id = getUUID();
 		var id1 = getUUID();
-		Estacionamento estacionamento = new Estacionamento(id, "DMS-1111", "SC", "CELTA", "PRETO");
-		Estacionamento estacionamento1 = new Estacionamento(id, "PAG-2252", "RJ", "FOX", "CINZA");
-		estacionamentoMap.put(id, estacionamento);
-		estacionamentoMap.put(id1, estacionamento1);
+		var id2 = getUUID();
+		Estacionamento estacionamento = new Estacionamento(id1, "DMS-1111", "SC", "CELTA", "PRETO");
+		
+		estacionamentoMap.put(id1, estacionamento);
+		
 	}
 	
 	public List<Estacionamento> findAll(){
@@ -65,28 +65,6 @@ public class EstacionamentoService {
 	}
 
 	public Estacionamento saida(String id) {
-		
 		return null;
-	}	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	}		
 }

@@ -32,7 +32,6 @@ public class EstacionamentoController {
 	public EstacionamentoController(EstacionamentoService estacionamentoService, EstacionamentoMapper estacionamentoMapper) {
 		this.estacionamentoService = estacionamentoService;
 		this.estacionamentoMapper = estacionamentoMapper;
-		
 	}
 		
 	@GetMapping
@@ -81,28 +80,4 @@ public class EstacionamentoController {
 		estacionamentoService.delete(id);
 		return ResponseEntity.noContent().build();
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }

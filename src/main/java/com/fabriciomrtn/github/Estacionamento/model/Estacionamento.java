@@ -14,8 +14,6 @@ public class Estacionamento {
 	
 	public Estacionamento() {}
 	
-	
-	
 	public Estacionamento(String id, String placa, String estado, String modelo, String cor) {
 		super();
 		this.id = id;
@@ -24,8 +22,6 @@ public class Estacionamento {
 		this.modelo = modelo;
 		this.cor = cor;
 	}
-
-
 
 	public String getId() {
 		return id;
@@ -75,7 +71,4 @@ public class Estacionamento {
 	public void setConta(double conta) {
 		this.conta = conta;
 	}
-	
-	
-	
 }
