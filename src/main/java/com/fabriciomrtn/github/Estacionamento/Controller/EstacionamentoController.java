@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -41,7 +42,7 @@ public class EstacionamentoController {
 		List<EstacionamentoDTO> resultado = estacionamentoMapper.toEstacionamentoDTOList(listaEstacionamento);
 		return ResponseEntity.ok(resultado);
 	}
-	
+		
 	@GetMapping("/{id}")
 	@ApiOperation("Busca o carro pelo Id")
 	public ResponseEntity<EstacionamentoDTO> findById(@PathVariable String id){
