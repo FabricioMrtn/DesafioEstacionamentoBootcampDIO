@@ -60,10 +60,10 @@ public class EstacionamentoController {
 		return ResponseEntity.status(HttpStatus.CREATED).body(resultado);
 	}
 	
-	@PostMapping("/{id")
+	@PostMapping("/{id}")
 	@ApiOperation("Saida do estacionamento")
-	public ResponseEntity<EstacionamentoDTO> saida(@PathVariable String id){
-		Estacionamento estacionamento = estacionamentoService.saida(id);
+	public ResponseEntity<EstacionamentoDTO> checkOut(@PathVariable String id){
+		Estacionamento estacionamento = estacionamentoService.checkOut(id);
 		return ResponseEntity.ok(estacionamentoMapper.toEstacionamentoDTO(estacionamento));
 	}
 	
