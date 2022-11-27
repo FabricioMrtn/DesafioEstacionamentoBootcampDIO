@@ -13,7 +13,7 @@ import com.fabriciomrtn.github.Estacionamento.DTO.EstacionamentoCreateDTO;
 import io.restassured.RestAssured;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class EstacionamentoControllerTest {
+class EstacionamentoControllerTest extends AbstractContainerBase{
 
 	@LocalServerPort
 	private int randomPort;
